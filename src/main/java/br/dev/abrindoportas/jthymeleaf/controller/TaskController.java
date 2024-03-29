@@ -22,15 +22,22 @@ public class TaskController {
   List<TaskModel> taskModels = new ArrayList<>();
 
   @GetMapping("/create")
-  public String getHomeString() {
-      return "create";
+  public ModelAndView getHomeString() {
+    ModelAndView mv = new ModelAndView("create");
+    mv.addObject("taskModel", new TaskModel());
+    return mv;
   }
   
   @PostMapping("/create")
   public String postCreateString(TaskModel taskModel) {
     // System.out.println("O nome da tarefa é " + taskModel.getName());
-    Long id = taskModels.size() + 1L;
-    taskModels.add(new TaskModel(id, taskModel.getName(), taskModel.getDate()));
+    if (taskModel.getId() != null) {
+      TaskModel taskModelFind = taskModels.stream().filter(taskModelItem -> taskModel.getId().equals(taskModelItem.getId())).findFirst().get();
+      taskModels.set(taskModels.indexOf(taskModelFind), taskModel);
+    } else {
+      Long id = taskModels.size() + 1L;
+      taskModels.add(new TaskModel(id, taskModel.getName(), taskModel.getDate()));
+    }
     return "redirect:/list";
   }
 

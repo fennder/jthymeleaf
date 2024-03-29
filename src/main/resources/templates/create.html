@@ -46,13 +46,14 @@
     <span>Cadastro de tarefas</span>
     <div class="container">
       <form method="POST" action="/create" th:object="${taskModel}">
+        <input type="hidden" th:value="${taskModel.id}" name="id"/>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Nome da Tarefa</label>
-          <input type="text" class="form-control" name="name" th:value="${taskModel.name}">
+          <input type="text" class="form-control" name="name" th:value="${taskModel.name}" required>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Data de Execução</label>
-          <input type="text" class="form-control" name="date" th:value="${{taskModel.date}}">
+          <input type="text" class="form-control" name="date" th:value="${{taskModel.date}}" required>
         </div>
         <!-- <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
