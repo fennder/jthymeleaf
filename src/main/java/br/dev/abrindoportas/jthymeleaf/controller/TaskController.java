@@ -14,12 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 
-
-
 @Controller
 public class TaskController {
   
   List<TaskModel> taskModels = new ArrayList<>();
+
+  @GetMapping("/")
+  public String getInicalString(TaskModel taskModel) {
+      return "index";
+  }
+  
 
   @GetMapping("/create")
   public ModelAndView getHomeString() {
