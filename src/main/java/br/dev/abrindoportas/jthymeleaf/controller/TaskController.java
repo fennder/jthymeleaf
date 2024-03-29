@@ -40,7 +40,7 @@ public class TaskController {
       taskModels.set(taskModels.indexOf(taskModelFind), taskModel);
     } else {
       Long id = taskModels.size() + 1L;
-      taskModels.add(new TaskModel(id, taskModel.getName(), taskModel.getDate()));
+      taskModels.add(new TaskModel(id, taskModel.getName(), taskModel.getDescription(), taskModel.getDate()));
     }
     return "redirect:/list";
   }

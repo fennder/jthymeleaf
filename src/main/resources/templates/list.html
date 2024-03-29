@@ -50,6 +50,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
+            <th scope="col">Descrição</th>
             <th scope="col">Data de execução</th>
             <th scope="col">#</th>
           </tr>
@@ -58,6 +59,7 @@
           <tr data-th-each="taskModel : ${taskModels}">
             <td data-th-text="${taskModel.id}"></td>
             <td data-th-text="${taskModel.name}"></td>
+            <td data-th-text="${taskModel.description}"></td>
             <td data-th-text="${{taskModel.date}}"></td> 
             <td><a class="btn btn-primary" th:href="@{'/edit/'+${taskModel.id}}">Editar</a></td>         
           </tr>

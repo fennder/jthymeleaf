@@ -6,9 +6,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class TaskModel {
 
-  public TaskModel(Long id, String name, Date date) {
+  public TaskModel(Long id, String name, String description, Date date) {
     this.id = id;
     this.name = name;
+    this.description = description;
     this.date = date;
   }
 
@@ -18,6 +19,7 @@ public class TaskModel {
 
   private Long id;
   private String name;
+  private String description;
 
   @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
   private Date date;
@@ -34,11 +36,20 @@ public class TaskModel {
   public void setName(String name) {
     this.name = name;
   }
+
   public Date getDate() {
     return date;
   }
   public void setDate(Date date) {
     this.date = date;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 }

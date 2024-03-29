@@ -52,6 +52,10 @@
           <input type="text" class="form-control" name="name" th:value="${taskModel.name}" required>
         </div>
         <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Descrição da Tarefa</label>
+          <input type="textarea" class="form-control" name="description" th:value="${taskModel.description}" required>
+        </div>
+        <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Data de Execução</label>
           <input type="text" class="form-control" name="date" th:value="${{taskModel.date}}" required>
         </div>
