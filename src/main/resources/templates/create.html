@@ -41,17 +41,18 @@
       </div>
     </nav>
   </header>
+  <!-- CONTEÚDO PRINCIPAL -->
   <main>
     <span>Cadastro de tarefas</span>
     <div class="container">
-      <form>
+      <form method="POST" action="/create">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Nome da Tarefa</label>
-          <input type="text" class="form-control" id="name" aria-describedby="name">
+          <input type="text" class="form-control" name="name" >
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Data de Execução</label>
-          <input type="text" class="form-control" id="date">
+          <input type="text" class="form-control" name="date" >
         </div>
         <!-- <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
