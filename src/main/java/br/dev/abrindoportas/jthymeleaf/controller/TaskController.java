@@ -62,5 +62,11 @@ public class TaskController {
       return mv;
   }
   
+  @GetMapping("/delete/{id}")
+    public String getDeleteString(@PathVariable("id") Long id){
+        taskModels.removeIf(taskModel -> id.equals(taskModel.getId()));
+        return "redirect:/list";
+    }
+    
   
 }
