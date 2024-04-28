@@ -50,8 +50,6 @@ jobs:
         password: ${{ secrets.SENHACPANEL }}
         local-dir: ./jar-upload/
         server-dir: ~/appservers/standalone/
-      env:
-        INPUT_DEBUG: true
 
     - name: Instalar o SSH Client
       run: sudo apt-get install openssh-client sshpass expect
@@ -68,7 +66,7 @@ jobs:
         expect \"password:\"
         send \"$SENHACPANEL\r\"
         expect \"$ \" 
-        send \"bash appservers/tmp/${{ steps.set_jar_name.outputs.jar_name }}.sh stop\r\"
+        send \"bash appservers/tmp/${{ steps.jar_name.outputs.jar_name }}.sh stop\r\"
         expect \"$ \"
         send \"exit\r\"
         expect eof
@@ -85,7 +83,7 @@ jobs:
         expect \"password:\"
         send \"$SENHACPANEL\r\"
         expect \"$ \" 
-        send \"bash appservers/tmp/${{ steps.set_jar_name.outputs.jar_name }}.sh stop\r\"
+        send \"bash appservers/tmp/${{ steps.jar_name.outputs.jar_name }}.sh stop\r\"
         expect \"$ \"
         send \"exit\r\"
         expect eof
