@@ -5,24 +5,27 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class TaskModel {
+  
+  private Long id;
+  private String name;
+  private String description;
+  // private String status;
+
+  @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+  private Date date;
 
   public TaskModel(Long id, String name, String description, Date date) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.date = date;
+    // this.status = status;
   }
 
   public TaskModel() {
   
   }
 
-  private Long id;
-  private String name;
-  private String description;
-
-  @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-  private Date date;
 
   public Long getId() {
     return id;
@@ -51,5 +54,13 @@ public class TaskModel {
   public void setDescription(String description) {
     this.description = description;
   }
+
+  // public String getStatus() {
+  //   return status;
+  // }
+
+  // public void setStatus(String status) {
+  //   this.status = status;
+  // }
 
 }

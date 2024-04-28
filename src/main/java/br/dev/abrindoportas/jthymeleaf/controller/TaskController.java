@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import br.dev.abrindoportas.jthymeleaf.models.TaskModel;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
 
 @Controller
 public class TaskController {

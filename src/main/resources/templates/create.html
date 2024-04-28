@@ -17,6 +17,18 @@
           <label for="exampleInputPassword1" class="form-label">Data de Execução</label>
           <input type="text" class="form-control" name="date" th:value="${{taskModel.date}}" required>
         </div>
+        <div class="mb-3">
+          <!-- <label for="exampleInputPassword1" class="form-label">Status da Execução</label> -->
+          <!-- <select class="form-select" size="5" aria-label="Default select example">
+            <option selected name="status" th:value="${taskModel.status}" required>Selecione o status</option>
+            <option value="A Iniciar" name="status" required>A Iniciar</option>
+            <option value="Iniciado" name="status" required>Iniciado</option>
+            <option value="Em execução" name="status" required>Em Execução</option>
+            <option value="Finalizado" name="status" required>Finalizado</option>
+          </select> -->
+          
+          <!-- <input type="text" class="form-control" name="status" th:value="${taskModel.status}" required> -->
+        </div>
         <!-- <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
