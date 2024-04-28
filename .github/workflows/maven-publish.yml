@@ -23,13 +23,13 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '20'
-        distribution: 'temurin'
+        distribution: 'adopt'
     
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
     - name: Criando o diretório para o Build do JAR
-      run: mkdir ./jar_upload
+      run: mkdir ./jar-upload
 
     - name: Copiando JAR gerado para a pasta jar_upload
       run: cp ./target/*.jar ./jar-upload
@@ -53,7 +53,7 @@ jobs:
     - name: Instalar o SSH Client
       run: sudo apt-get install openssh-client sshpass expect
 
-    - name: PAra o Spring Boot
+    - name: Parar o Spring Boot
       env:
         USUARIOCPANEL: ${{ secrets.USUARIOCPANEL }}
         HOST: ${{ secrets.HOST }}
