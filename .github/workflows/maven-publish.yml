@@ -39,7 +39,7 @@ jobs:
       # run: echo "::set-output name=set_jar_name::$(basename $(ls ./jar-upload/*.jar) .jar)"
       run: echo "jar_name=$(basename $(ls ./jar-upload/*.jar) .jar)" >> "$GITHUB_OUTPUT"
 
-    - name: Usar o nome do JAr em outra etapa
+    - name: Usar o nome do Jar em outra etapa
       run: echo "O nome do arquivo JAR é ${{ steps.set_jar_name.outputs.jar_name }}"
 
     - name: Enviando os JAR por FTP
@@ -50,6 +50,8 @@ jobs:
         password: ${{ secrets.SENHACPANEL }}
         local-dir: ./jar-upload/
         server-dir: ~/appservers/standalone/
+      env:
+        INPUT_DEBUG: true
 
     - name: Instalar o SSH Client
       run: sudo apt-get install openssh-client sshpass expect
