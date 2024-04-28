@@ -36,8 +36,8 @@ jobs:
 
     - name: Definir nome do arquivo JAR sem extensão
       id: set_jar_name
-      run: echo "::set-output name=set_jar_name::$(basename $(ls ./jar-upload/*.jar) .jar)"
-      # run: echo "{set_jar_name}=$(basename $(ls ./jar-upload/*.jar) .jar)" >> $GITHUB_OUTPUT
+      # run: echo "::set-output name=set_jar_name::$(basename $(ls ./jar-upload/*.jar) .jar)"
+      run: echo "{set_jar_name}=$(basename $(ls ./jar-upload/*.jar) .jar)" >> $GITHUB_OUTPUT
 
     - name: Usar o nome do JAr em outra etapa
       run: echo "O nome do arquivo JAR é ${{ steps.set_jar_name.outputs.jar_name }}"
