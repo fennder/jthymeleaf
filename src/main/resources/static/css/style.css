@@ -4,3 +4,6 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+main > .container {
+  padding: 60px 15px 0;
+}

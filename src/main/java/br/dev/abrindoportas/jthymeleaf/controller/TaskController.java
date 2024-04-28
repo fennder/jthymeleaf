@@ -23,6 +23,12 @@ public class TaskController {
   public String getInicalString(TaskModel taskModel) {
       return "index";
   }
+
+  @GetMapping("/about")
+  public String getMethodName(TaskModel taskModel) {
+      return "about";
+  }
+  
   
 
   @GetMapping("/create")
@@ -62,5 +68,10 @@ public class TaskController {
       return mv;
   }
   
+  @GetMapping("/delete/{id}")
+    public String getDeleteString(@PathVariable("id") Long id){
+        taskModels.removeIf(taskModel -> id.equals(taskModel.getId()));
+        return "redirect:/list";
+    }
   
 }
