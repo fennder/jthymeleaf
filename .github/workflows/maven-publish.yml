@@ -83,7 +83,7 @@ jobs:
         expect \"password:\"
         send \"$SENHACPANEL\r\"
         expect \"$ \" 
-        send \"bash appservers/tmp/${{ steps.jar_name.outputs.jar_name }}.sh stop\r\"
+        send \"bash appservers/tmp/${{ steps.jar_name.outputs.jar_name }}.sh start\r\"
         expect \"$ \"
         send \"exit\r\"
         expect eof
