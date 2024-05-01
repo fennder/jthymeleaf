@@ -52,7 +52,7 @@ jobs:
         server-dir: ~/appservers/standalone/
 
     - name: Instalar o SSH Client
-      run: sudo apt-get install openssh-client sshpass expect
+      run: sudo apt install openssh-client sshpass expect
 
     - name: Parar o Spring Boot
       env:
