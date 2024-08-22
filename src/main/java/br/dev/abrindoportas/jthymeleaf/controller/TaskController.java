@@ -26,8 +26,6 @@ public class TaskController {
       return "about";
   }
   
-  
-
   @GetMapping("/create")
   public ModelAndView getHomeString() {
     ModelAndView mv = new ModelAndView("create");
